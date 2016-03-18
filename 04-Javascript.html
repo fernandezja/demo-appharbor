@@ -1,0 +1,39 @@
+﻿<html>
+<head>
+    <title>Demo 04 Javascript</title>
+</head>
+<body>
+    <h1 id="titulo">Demo 04 Javascript</h1>
+    <button onclick="cambiarTitulo()">Boton 1</button>
+    <br />
+    <button id="btn2">Boton 2 (no  intrusivo)</button>
+    <br />
+    <button id="btn3">Boton 3 (remover H1)</button>
+
+    <script type="text/javascript">
+
+        function cambiarTitulo() {
+            var t = document.getElementById('titulo');
+            if (t) {
+                t.innerHTML = 'Demo 05 Javascript';
+            }
+        }
+
+        window.onload = function () {
+            //alert('Cargado!');
+            var b2 = document.getElementById('btn2');
+            b2.addEventListener('click', cambiarTitulo);
+            b2.addEventListener('click', function () {
+                alert(1 + 2);
+            });
+
+            var b3 = document.getElementById('btn3');
+            b3.addEventListener('click', function () {
+                var t = document.getElementById('titulo');
+                t.remove();
+            });
+        }
+
+    </script>
+</body>
+</html>
