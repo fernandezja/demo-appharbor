@@ -3,7 +3,48 @@
     <title>Demo 05 Array en Javascript</title>
 </head>
 <body>
-    <h1 id="titulo">Demo 05 Array en Javascrip</h1>
-    
+    <h1 id="elemento1">Demo 05 Array en Javascrip</h1>
+    <button id="elemento2">Boton 1</button>
+    <button id="elemento3">Boton 2</button>  
+
+    <hr />
+
+    <div id="botonera"></div>     
+
+    <script type="text/javascript">
+        window.onload = function () {
+            var botonera = document.getElementById('botonera');
+
+            for (var i = 1; i < 101; i++) {
+                var elemNombre = 'botoncito' + i;
+                var elemHtml = '' + i;
+                var elem = document.createElement('button');
+                elem.innerHTML = elemHtml;
+                elem.addEventListener('click', function () {
+                    var self = this;
+                    //mover(self);
+                    reorganizarTodo(self);
+                });
+                botonera.appendChild(elem);
+            }
+
+            function reorganizarTodo(boton) {
+                console.log(boton.innerHTML);
+
+                //mover aleatoriamente los botoncitos... 
+                for (var i = 0; i < botonera.children.length; i++) {
+                    var rand = Math.floor((Math.random() * botonera.children.length));;
+                    var b = botonera.children[rand];
+                    mover(b)
+                    
+                }
+            }
+
+            function mover(boton) {
+                botonera.removeChild(boton);
+                botonera.appendChild(boton);
+            }
+        };
+    </script>
 </body>
 </html>
