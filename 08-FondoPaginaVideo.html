@@ -1,0 +1,48 @@
+﻿<html>
+<head>
+    <title>Demo 8: Video de fondo de pagina</title>
+
+    <style type="text/css">
+        body {
+            color:#ffffff;
+            background-color: #000000;
+        }
+        /*video*/
+        .videoDeFondo { 
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100;
+            transform: translateX(-50%) translateY(-50%);
+            background-size: cover;
+            transition: 1s opacity;
+        }
+
+        .principal {
+          font-weight:100; 
+          background: rgba(0,0,0,0.3);
+          color: #ffffff;
+          padding: 20px;
+          width: 33%;
+          margin:20px;
+          float: right;
+          font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <video autoplay loop id="miReproductor" class="videoDeFondo">
+        <source src="videos/free-loops_Smoke_Heavy_4_H264.mp4" type="video/mp4">
+    </video>
+
+    <div class="principal">
+        <h1>Demo 8: Video de fondo de pagina</h1>
+        <p>Ejemplo de contenido</p>
+    </div> 
+    
+</body>
+</html>
